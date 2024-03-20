@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp03q0grgikeh"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_vro3d"]
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_tubn5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a5xfv"]
+radius = 20.9974
+height = 67.8974
+
+[node name="Player" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_vro3d")
+
+[node name="HappyBoo" parent="CharacterBody2D" instance=ExtResource("2_tubn5")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+rotation = -1.55509
+shape = SubResource("CapsuleShape2D_a5xfv")
